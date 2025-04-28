@@ -81,7 +81,7 @@ export const routeTree = rootRoute
       ]
     },
     "/": {
-      "filePath": "index.tsx"
+      "filePath": "index.jsx"
     }
   }
 }

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ExperienceCard from "../generic_components/ExperienceCard";
+import { useEffect } from "react";
 
 export const Route = createFileRoute("/")({
 	component: App,

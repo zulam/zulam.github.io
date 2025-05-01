@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 
 import { resolve } from "node:path";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import ghPages from 'vite-plugin-gh-pages'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
 		TanStackRouterVite({ autoCodeSplitting: true }),
 		viteReact(),
 		tailwindcss(),
+		ghPages()
 	],
 	test: {
 		globals: true,

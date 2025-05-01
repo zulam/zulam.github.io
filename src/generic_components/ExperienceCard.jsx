@@ -5,7 +5,8 @@ function ExperienceCard({ color, company, title, timespan, description }) {
     return (
         <div className="flex-1 p-4">
             <div
-                className={`${showText ? `bg-[${color}]` : 'bg-gray-200'} p-6 rounded-lg shadow-lg hover:cursor-pointer transition-transform duration-300 hover:scale-104`}
+                className={`p-6 rounded-lg shadow-lg hover:cursor-pointer transition-transform duration-300 hover:scale-104`}
+                style={{ backgroundColor: showText ? color : '#e5e7eb' }} // #e5e7eb is Tailwind's gray-200
                 onClick={() => setShowText(prevState => !prevState)}
             >
                 <p className={`text-xl font-bold ${showText ? 'text-black' : `text-[${color}]`}`}>{company}</p>

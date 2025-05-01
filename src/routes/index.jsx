@@ -6,92 +6,75 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-	const allyDescription = <ul className="list-disc ml-5 text-sm text-left">
-		<li>
-			Worked on business-facing applications using C#, HTML, CSS, JavaScript,
-			JQuery, KendoUI, and SSMS in an agile environment
-			<ul className="list-disc ml-5">
-				<li>
-					Full-stack development for numerous APIs and web pages, allowing our
-					business users to easily perform business functions
-				</li>
-				<li>
-					Sustain work for one of our business teams, studying the code and
-					queries behind daily distributed reports in order to troubleshoot pressing
-					production issues
-				</li>
-			</ul>
-		</li>
-		<li>
-			Managed code releases to development and production environments on an agile
-			team during our transition to CI/CD
-			<ul className="list-disc ml-5">
-				<li>
-					Wrote a Python script to automatically package our APIs for releases
-					(prior to using Jenkins)
-				</li>
-				<li>
-					Wrote a PowerShell script to generate an SVN report to allow for simpler
-					tracking of changes ready for QA releases
-				</li>
-				<li>
-					Participated in the establishment of Jenkins and BitBucket for automated
-					builds and deployments
-				</li>
-			</ul>
-		</li>
-	</ul>
+	const allyDescription = (
+		<ul className="list-disc ml-5 text-sm text-left">
+			<li>
+				Worked on business-facing applications using C#, HTML, CSS, JavaScript, and SQL in an agile environment.
+				<ul className="list-disc ml-5">
+					<li>
+						Full-stack development for a help link system, granting users handy access to relevant documentation.
+					</li>
+					<li>
+						Full-stack development for numerous APIs and web pages to support business functions.
+					</li>
+					<li>
+						Sustain work for one of our business teams, studying the code and queries behind daily distributed reports in order to troubleshoot pressing production issues.
+					</li>
+					<li>
+						Participated in daily standups, sprint retrospectives, sprint planning meetings, and other agile ceremonies.
+					</li>
+				</ul>
+			</li>
+			<li>
+				Managed code releases to dev and production environments on an agile team during our transition to CI/CD.
+				<ul className="list-disc ml-5">
+					<li>
+						Wrote a Python script to automatically package our APIs for releases, eliminating unnecessary manual work.
+					</li>
+					<li>
+						Wrote a PowerShell script to generate SVN reports, giving clear tracking of code updates tied to releases.
+					</li>
+					<li>
+						Participated in the establishment of Jenkins and BitBucket for automated builds and deployments.
+					</li>
+				</ul>
+			</li>
+		</ul>
+	);
 
-	const infocisionDescription = <ul className="list-disc ml-5 text-sm text-left">
-		<li>
-			Software support of call center technology for one of the company’s largest
-			clients, as well as development and support for a number of other clients
-		</li>
-		<li>
-			Developed several SSIS packages to transform and transfer data from several
-			API endpoints to SQL database tables on an hourly basis
-		</li>
-		<li>
-			Developed a full-stack web page using React, C#, .NET Framework API, and SQL
-			stored procedures, which allowed users to manage billing codes and segments
-			for one of our largest clients
-		</li>
-		<li>
-			Numerous other projects involving API development and understanding company
-			processes front to back
-		</li>
-	</ul>
+	const infocisionDescription = (
+		<ul className="list-disc ml-5 text-sm text-left">
+			<li>
+				Software support of call center technology for the company’s largest client, as well as several other clients.
+			</li>
+			<li>
+				Constructed several SSIS packages to transform and transfer data to SQL database tables regularly.
+			</li>
+			<li>
+				Developed a full-stack web page using React, C#, .Net Framework API, and SQL stored procedures, which allowed users to manage billing codes and segments for one of our largest clients.
+			</li>
+		</ul>
+	);
 
-	const sylvanDescription = <ul className="list-disc ml-5 text-sm text-left">
-		<li>
-			Worked on a business-facing web application used for management of the
-			Single Family Rental lifecycle, from property underwriting through acquisition,
-			rental and sale
-			<ul className="list-disc ml-5">
-				<li>
-					Worked on an improved system for dispositions, allowing management of
-					a home's listing, offers, and final sale data
-				</li>
-				<li>
-					Worked on the turns system, simplifying the transitory process between
-					leases on a home
-				</li>
-				<li>
-					Redesigned a property media view, providing a simplified, feature-rich UI
-					for searching and viewing properties' photos and videos
-				</li>
-				<li>
-					Implemented a project management system for the C-suite, allowing time
-					tracking and tracking of connected business processes for macro-level
-					business initiatives
-				</li>
-			</ul>
-		</li>
-		<li>
-			Technologies used include C#, .NET Core, HTML, CSS, JavaScript, React,
-			Jenkins, Git, AWS, Microsoft SQL Server, and PostgreSQL
-		</li>
-	</ul>
+	const sylvanDescription = (
+		<ul className="list-disc ml-5 text-sm text-left">
+			<li>
+				Improved asset offloading system that managed the listing, offers, and sale lifecycle, reducing mean time to sell.
+			</li>
+			<li>
+				Contributed to an asset turnover system that reduced overhead by $4+ million per year.
+			</li>
+			<li>
+				Redesigned a property media view, providing a feature-rich UI for viewing properties’ photos and videos.
+			</li>
+			<li>
+				Implemented a project management system for the C-suite, allowing tracking of time and connected business processes for macro-level business initiatives.
+			</li>
+			<li>
+				Technologies used include C#, .Net Core, React, HTML, CSS, JavaScript, Jenkins, Git, AWS, Docker, Microsoft SQL Server, and PostgreSQL.
+			</li>
+		</ul>
+	);
 
 	return (
 		<div className="text-center">

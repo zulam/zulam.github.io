@@ -1,5 +1,5 @@
 {
-  "homepage": "http://zackulam.github.io/zack-ulam-portfolio",
+  "homepage": "https://zulam.github.io",
   "name": "zack-ulam-portfolio",
   "private": true,
   "type": "module",
@@ -13,7 +13,7 @@
     "lint": "biome lint",
     "check": "biome check",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.6",

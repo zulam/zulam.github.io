@@ -11,8 +11,7 @@ export default defineConfig({
 	plugins: [
 		TanStackRouterVite({ autoCodeSplitting: true }),
 		viteReact(),
-		tailwindcss(),
-		ghPages()
+		tailwindcss()
 	],
 	test: {
 		globals: true,

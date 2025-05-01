@@ -6,6 +6,10 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
+	useEffect(() => {
+		document.title = "Zack Ulam";
+	}, []);
+
 	const allyDescription = (
 		<ul className="list-disc ml-5 text-sm text-left">
 			<li>

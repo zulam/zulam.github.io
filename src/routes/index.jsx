@@ -12,7 +12,7 @@ function App() {
 	}, []);
 
 	const allyDescription = (
-		<ul className="list-disc ml-5 text-sm text-left">
+		<ul className="list-disc ml-5 text-xs lg:text-sm text-left">
 			<li>
 				Worked on business-facing applications using C#, HTML, CSS, JavaScript, and SQL in an agile environment.
 				<ul className="list-disc ml-5">
@@ -48,7 +48,7 @@ function App() {
 	);
 
 	const infocisionDescription = (
-		<ul className="list-disc ml-5 text-sm text-left">
+		<ul className="list-disc ml-5 text-xs lg:text-sm text-left">
 			<li>
 				Software support of call center technology for the company’s largest client, as well as several other clients.
 			</li>
@@ -62,7 +62,7 @@ function App() {
 	);
 
 	const sylvanDescription = (
-		<ul className="list-disc ml-5 text-sm text-left">
+		<ul className="list-disc ml-5 text-xs lg:text-sm text-left">
 			<li>
 				Improved asset offloading system that managed the listing, offers, and sale lifecycle, reducing mean time to sell.
 			</li>
@@ -85,17 +85,17 @@ function App() {
 		<div className="text-center">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 			<header className="min-h-screen items-center flex flex-col bg-linear-to-br from-[#24272e] to-black text-white">
-				<div className="flex flex-col h-[200px] mt-30">
-					<p className="text-[calc(10px+5vmin)] text-[#3a7dc9]">Hi!</p>
-					<p className="text-[calc(10px+3vmin)]">My name is <span className='text-[#7fbc00]'>Zack Ulam.</span></p>
-					<p className="text-[calc(10px+3vmin)]">I am a <span className='text-[#9c2a96]'>Fullstack Developer.</span></p>
+				<div className="flex flex-col mt-30">
+					<p className="text-[calc(15px+5vmin)] text-[#3a7dc9]">Hi!</p>
+					<p className="text-[calc(12px+3vmin)]">My name is <span className='text-[#7fbc00]'>Zack Ulam.</span></p>
+					<p className="text-[calc(12px+3vmin)]">I am a <span className='text-[#9c2a96]'>Fullstack Developer.</span></p>
 					<div className='mt-2'>
 						<a href="https://www.linkedin.com/in/zack-ulam-605220132/" className="fa fa-linkedin fa-2x mr-2 hover:cursor-pointer transition-transform duration-300 hover:scale-120" target="_blank" />
 						<a href="https://github.com/zulam" className=" fa fa-github fa-2x ml-2 hover:cursor-pointer transition-transform duration-300 hover:scale-120" target="_blank" />
 					</div>
 				</div>
-				<p className="text-[calc(10px+2vmin)] mt-20">Experiences</p>
-				<div className="lg:flex sm:columns-1 sm:w-[95vw] overflowY-auto">
+				<p className="text-[calc(10px+2vmin)] mt-20">Experience</p>
+				<div className="lg:flex w-[95vw] overflowY-auto">
 					<ExperienceCard color='#9c2a96' company='Ally' title='Full-Stack Developer' timespan='2018-2019' description={allyDescription} />
 					<ExperienceCard color='#7fbc00' company='Infocision' title='Lead Application Developer' timespan='2020-2021' description={infocisionDescription} />
 					<ExperienceCard color='#3a7dc9' company='Sylvan Road' title='Full-Stack Developer' timespan='2021-2025' description={sylvanDescription} />

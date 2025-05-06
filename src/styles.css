@@ -1,15 +1,170 @@
-@import "tailwindcss";
+/*colors*/
+.text-blue {
+	color: #3a7dc9
+}
 
+.text-green {
+	color: #7fbc00
+}
+
+.text-purple {
+	color: #9c2a96
+}
+
+.text-black {
+	color: black
+}
+
+.background-blue {
+	background-color: #3a7dc9
+}
+
+.background-green {
+	background-color: #7fbc00
+}
+
+.background-purple {
+	background-color: #9c2a96
+}
+
+.background-grey {
+	background-color: #dfdfdf
+}
+
+/*base elements*/
 body {
-	@apply m-0;
+	margin: 0px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
 		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 		sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+		min-height: 100vh;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(to bottom right, #181a1f, black);
+	color: white;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+a {
+	cursor: pointer;
+	margin-inline: 8px;
+	transition: transform 0.2s;
+	text-decoration: none;
+	color: white
+}
+
+a:hover {
+	transform: scale(1.2);
+}
+
+.container {
+	text-align: center;
+}
+
+/*header*/
+.header {
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+	text-align: center;
+	align-items: center;
+}
+
+.hello-text {
+	font-size: calc(15px + 6vmin);
+	line-height: 0;
+	margin-inline: 35px;
+	margin-block: 45px;
+}
+
+.header-text {
+	font-size: calc(15px + 3vmin);
+	line-height: 10px;
+	margin: 35px;
+}
+
+.link-container {
+	margin: 30px;
+	text-align: center;
+}
+
+/*experience*/
+.experience-text {
+	margin-top: 50px;
+	font-size: calc(15px + 2vmin);
+}
+
+.experience-container {
+	overflow-x:hidden;
+	width: 95vw;
+}
+
+.experience-card-container{
+	flex: 1;
+	padding-inline: 10px;
+	margin-block: 10px;
+	margin-inline: 0px;
+}
+
+.experience-card {
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: transform 0.2s;
+	line-height: 1.2;
+}
+
+.experience-card:hover {
+	transform: scale(1.03);
+}
+
+.experience-card-company{
+	font-size: 15px;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.experience-card-title {
+	font-size: 14px;
+	margin: 5px;
+}
+
+.experience-card-description {
+	font-size: 12px;
+	text-align: left;
+	margin-left: 6px;
+}
+
+/*media & animations*/
+.bounce {
+	animation: bounce 1s infinite;
+}
+
+@media (min-width: 64rem) {
+	.experience-container {
+		display: flex;
+	}
+	.experience-card-company{
+		font-size: 20px;
+	}
+	.experience-card-title {
+		font-size: 16px;
+	}
+	.experience-card-description {
+		font-size: 14px;
+	}
+	.header {
+		text-align: left;
+	}
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }

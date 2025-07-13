@@ -94,7 +94,7 @@ function App() {
 					<a href="https://www.linkedin.com/in/zack-ulam-605220132/" className="fa fa-linkedin fa-2x" target="_blank" />
 					<a href="https://github.com/zulam" className=" fa fa-github fa-2x" target="_blank" />
 					<a href="https://zulam.github.io/SubStar_Site" target="_blank" rel="noopener noreferrer">
-						<img src="../../substar_icon_compressed_small.png" alt="Substar" style={{ width: '32px', height: '32px' }} />
+						<img src="/substar_icon_compressed_small.png" alt="Substar" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
 					</a>
 				</div>
 			</div>

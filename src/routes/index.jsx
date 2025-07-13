@@ -81,6 +81,22 @@ function App() {
 		</ul>
 	);
 
+	const subStarDescription = (
+		<ul className="list-disc experience-card-description">
+			<li>
+				Developed an Android app to give youth soccer coaches an intuitive way to manage in-game player substitutions.
+			</li>
+			<li>
+				Currently in testing, pending release to Google Play Store in August 2025.
+			</li>
+			<li>
+				Technologies used include React Native, Gradle, Android Studio, and VS Code.
+
+			</li>
+		</ul>
+	);
+
+
 	return (
 		<div className="container">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -100,10 +116,10 @@ function App() {
 			</div>
 			<p className="experience-text mt-20">Experience</p>
 			<div className="experience-container">
+				<ExperienceCard color='substar' company='SubStar' title='Owner' timespan='2025-Present' description={subStarDescription} />
 				<ExperienceCard color='blue' company='Sylvan Road' title='Full-Stack Developer' timespan='2021-2025' description={sylvanDescription} />
 				<ExperienceCard color='green' company='Infocision' title='Lead Application Developer' timespan='2020-2021' description={infocisionDescription} />
 				<ExperienceCard color='purple' company='Ally' title='Full-Stack Developer' timespan='2018-2019' description={allyDescription} />
-
 			</div>
 		</div>
 	);

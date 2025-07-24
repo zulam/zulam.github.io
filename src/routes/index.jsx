@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ExperienceCard from "../generic_components/ExperienceCard";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
 	component: App,
@@ -14,35 +14,23 @@ function App() {
 	const allyDescription = (
 		<ul className="list-disc experience-card-description">
 			<li>
-				Worked on business-facing applications using C#, HTML, CSS, JavaScript, and SQL in an agile environment.
-				<ul>
-					<li>
-						Full-stack development for a help link system, granting users handy access to relevant documentation.
-					</li>
-					<li>
-						Full-stack development for numerous APIs and web pages to support business functions.
-					</li>
-					<li>
-						Sustain work for one of our business teams, studying the code and queries behind daily distributed reports in order to troubleshoot pressing production issues.
-					</li>
-					<li>
-						Participated in daily standups, sprint retrospectives, sprint planning meetings, and other agile ceremonies.
-					</li>
-				</ul>
+				Delivered full-stack solutions for business-facing applications using C#, JavaScript, and SQL.
 			</li>
 			<li>
-				Managed code releases to dev and production environments on an agile team during our transition to CI/CD.
-				<ul>
-					<li>
-						Wrote a Python script to automatically package our APIs for releases, eliminating unnecessary manual work.
-					</li>
-					<li>
-						Wrote a PowerShell script to generate SVN reports, giving clear tracking of code updates tied to releases.
-					</li>
-					<li>
-						Participated in the establishment of Jenkins and BitBucket for automated builds and deployments.
-					</li>
-				</ul>
+				Developed a dynamic help link system to provide context-aware documentation access.
+
+			</li>
+			<li>
+				Built and maintained internal APIs and dashboards to support enterprise business processes.
+			</li>
+			<li>
+				Automated build and deployment workflows using Jenkins, Bitbucket, and CI/CD pipelines.
+			</li>
+			<li>
+				Authored PowerShell and Python scripts to optimize release and reporting processes.
+			</li>
+			<li>
+				Tech Stack: C#, JavaScript, HTML/CSS, SQL Server, Python, PowerShell, Jenkins, SVN, Bitbucket.
 			</li>
 		</ul>
 	);
@@ -50,13 +38,16 @@ function App() {
 	const infocisionDescription = (
 		<ul className="list-disc experience-card-description">
 			<li>
-				Software support of call center technology for the company’s largest client, as well as several other clients.
+				Maintained and enhanced core call center systems for the company’s largest client and others.
 			</li>
 			<li>
-				Constructed several SSIS packages to transform and transfer data to SQL database tables regularly.
+				Created SSIS packages for automated ETL operations, ensuring accurate and timely data ingestion.
 			</li>
 			<li>
-				Developed a full-stack web page using React, C#, .Net Framework API, and SQL stored procedures, which allowed users to manage billing codes and segments for one of our largest clients.
+				Developed a React and .NET Framework web interface for managing billing codes and segmentation rules.
+			</li>
+			<li>
+				Tech Stack: C#, .NET Framework, SQL Server, SSIS, React.
 			</li>
 		</ul>
 	);
@@ -64,19 +55,22 @@ function App() {
 	const sylvanDescription = (
 		<ul className="list-disc experience-card-description">
 			<li>
-				Improved asset offloading system that managed the listing, offers, and sale lifecycle, reducing mean time to sell.
+				Proposed and redesigned an entity notes system, allowing for dynamic logging for various domain entities.
 			</li>
 			<li>
-				Contributed to an asset turnover system that reduced overhead by $4+ million per year.
+				Led UI development of the asset offloading platform, significantly reducing time-to-sale.
 			</li>
 			<li>
-				Redesigned a property media view, providing a feature-rich UI for viewing properties’ photos and videos.
+				Co-developed an asset turnover system, resulting in $4M+ in annual overhead reduction.
 			</li>
 			<li>
-				Implemented a project management system for the C-suite, allowing tracking of time and connected business processes for macro-level business initiatives.
+				Redesigned the property media viewer to deliver a dynamic UI for managing and displaying media assets.
 			</li>
 			<li>
-				Technologies used include C#, .Net Core, React, HTML, CSS, JavaScript, Jenkins, Git, AWS, Docker, Microsoft SQL Server, and PostgreSQL.
+				Spearheaded a C-suite project management dashboard to track time and integrate high-level business initiatives.
+			</li>
+			<li>
+				Tech Stack: C#, .NET Core, ReactJS, HTML/CSS, SQL Server, PostgreSQL, AWS, Docker, Jenkins, Git.
 			</li>
 		</ul>
 	);
@@ -84,7 +78,7 @@ function App() {
 	const subStarDescription = (
 		<ul className="list-disc experience-card-description">
 			<li>
-				Developed an Android app to give youth soccer coaches an intuitive way to manage in-game player substitutions.
+				Planned, designed, and developed an intuitive substitution management app for youth soccer coaches.
 			</li>
 			<li>
 				Currently in testing, pending release to Google Play Store in August 2025.
@@ -97,30 +91,142 @@ function App() {
 	);
 
 
+	// ...existing code...
+	const [randomShape, setRandomShape] = useState(null);
+
+	useEffect(() => {
+		const colors = ['#FFD600', 'rgb(255, 39, 39)', 'black', 'rgba(36, 142, 255, 1)']; // yellow from experience-cards, red, black, blue
+		const shapes = ['circle', 'triangle', 'square'];
+		const getRandom = arr => arr[Math.floor(Math.random() * arr.length)];
+
+		const renderShape = () => {
+			const color = getRandom(colors);
+			const shape = getRandom(shapes);
+			const size = 120;
+			if (shape === 'circle') {
+				return <svg width={size} height={size}><circle cx={size / 2} cy={size / 2} r={size / 2} fill={color} /></svg>;
+			} else if (shape === 'square') {
+				return <svg width={size} height={size}><rect width={size} height={size} fill={color} /></svg>;
+			} else if (shape === 'triangle') {
+				return <svg width={size} height={size}><polygon points={`${size / 2},0 0,${size} ${size},${size}`} fill={color} /></svg>;
+			}
+		};
+
+		// Show a shape immediately
+		setRandomShape(renderShape());
+
+		const interval = setInterval(() => {
+			setRandomShape(renderShape());
+		}, 1500);
+		return () => clearInterval(interval);
+	}, []);
+
+
+	// Carousel and expand state
+	const experienceData = [
+		{ color: 'substar', company: 'SubStar', title: 'Owner', timespan: '2025-Present', description: subStarDescription },
+		{ color: 'blue', company: 'Sylvan Road', title: 'Full-Stack Developer', timespan: '2021-2025', description: sylvanDescription },
+		{ color: 'green', company: 'Infocision', title: 'Lead Application Developer', timespan: '2020-2021', description: infocisionDescription },
+		{ color: 'purple', company: 'Ally', title: 'Full-Stack Developer', timespan: '2018-2019', description: allyDescription },
+	];
+	const [carouselIndex, setCarouselIndex] = useState(0);
+	const [expandedIndex, setExpandedIndex] = useState(null);
+
+	const handlePrev = () => {
+		setCarouselIndex((prev) => {
+			const newIdx = (prev - 1 + experienceData.length) % experienceData.length;
+			if (expandedIndex === prev) setExpandedIndex(newIdx);
+			return newIdx;
+		});
+	};
+	const handleNext = () => {
+		setCarouselIndex((prev) => {
+			const newIdx = (prev + 1) % experienceData.length;
+			if (expandedIndex === prev) setExpandedIndex(newIdx);
+			return newIdx;
+		});
+	};
+	const handleExpand = (idx) => setExpandedIndex(expandedIndex === idx ? null : idx);
+
+	// Helper to get indices for prev, current, next
+	const getCarouselIndices = () => {
+		const prev = (carouselIndex - 1 + experienceData.length) % experienceData.length;
+		const next = (carouselIndex + 1) % experienceData.length;
+		return [prev, carouselIndex, next];
+	};
+
 	return (
-		<div className="container">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-			<div className="header">
-				<p className="hello-text text-blue">Hello!</p>
-				<div className='header-text-container'>
-					<p className="header-text">My name is <span className='text-green'>Zack Ulam.</span></p>
-					<p className="header-text">I am a <span className='text-purple'>Fullstack Developer.</span></p>
+		<div className="container" style={{ width: '100vw' }}>
+			<div style={{ width: '80vw', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+				<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', margin: '0 auto' }}>
+					<div className="header">
+						<p className="hello-text text-blue">Hello!</p>
+						<div className='header-text-container'>
+							<p className="header-text">My name is <span className='text-green'>Zack Ulam.</span></p>
+							<p className="header-text">I am a <span className='text-purple'>Fullstack Engineer.</span></p>
+						</div>
+						<div className="link-container">
+							<a href="https://www.linkedin.com/in/zack-ulam-605220132/" className="linkedin-icon fa fa-linkedin fa-3x" target="_blank" />
+							<a href="https://github.com/zulam" className="github-icon fa fa-github fa-3x" target="_blank" />
+							<a href="https://zulam.github.io/SubStar_Site" target="_blank" rel="noopener noreferrer">
+								<img src="/substar_icon_compressed_small.png" alt="Substar" style={{
+									width: '48px',
+									height: '48px',
+									borderRadius: '8px',
+								}} />
+							</a>
+						</div>
+					</div>
+					<div className='random-shapes' style={{ marginInline: '30px' }}>
+						{randomShape}
+					</div>
 				</div>
-				<div className="link-container">
-					<a href="https://www.linkedin.com/in/zack-ulam-605220132/" className="fa fa-linkedin fa-2x" target="_blank" />
-					<a href="https://github.com/zulam" className=" fa fa-github fa-2x" target="_blank" />
-					<a href="https://zulam.github.io/SubStar_Site" target="_blank" rel="noopener noreferrer">
-						<img src="/substar_icon_compressed_small.png" alt="Substar" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
-					</a>
+				<div className="experience-carousel" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: '100px' }}>
+					<button onClick={handlePrev} style={{ fontSize: 32, background: 'none', border: 'none', cursor: 'pointer', color: '#888', zIndex: 2 }} aria-label="Previous Experience">&#8592;</button>
+					<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0' }}>
+						{getCarouselIndices().map((idx) => {
+							const isCenter = idx === carouselIndex;
+							const isSide = !isCenter;
+							return (
+								<div
+									key={idx}
+									className={isSide ? 'carousel-side-item' : ''}
+									onClick={isCenter ? () => handleExpand(idx) : undefined}
+									style={{
+										width: isCenter ? '50%' : '30%',
+										transition: 'all 0.2s',
+										cursor: isCenter ? 'pointer' : 'default',
+										padding: '0',
+										position: 'relative',
+										opacity: isCenter ? 1 : 0.7,
+										zIndex: isCenter ? 2 : 1,
+										transform: isCenter ? 'scale(1.08)' : 'scale(0.92)',
+										overflow: 'hidden',
+										pointerEvents: isCenter ? 'auto' : 'none',
+									}}
+								>
+								<ExperienceCard
+										color={experienceData[idx].color}
+										company={experienceData[idx].company}
+										title={experienceData[idx].title}
+										timespan={experienceData[idx].timespan}
+										description={null}
+										active={isCenter}
+										expanded={expandedIndex === idx}
+								/>
+								</div>
+							);
+						})}
+					</div>
+					<button onClick={handleNext} style={{ fontSize: 32, background: 'none', border: 'none', cursor: 'pointer', color: '#888', zIndex: 2 }} aria-label="Next Experience">&#8594;</button>
+				</div>
+				<div className='description-container' style={{ color: '#333', display: 'flex', justifyContent: 'center' }}>
+					{expandedIndex !== null && (
+						<p style={{ fontSize: '30px' }}>{experienceData[expandedIndex].description}</p>
+					)}
 				</div>
 			</div>
-			<p className="experience-text mt-20">Experience</p>
-			<div className="experience-container">
-				<ExperienceCard color='substar' company='SubStar' title='Owner' timespan='2025-Present' description={subStarDescription} />
-				<ExperienceCard color='blue' company='Sylvan Road' title='Full-Stack Developer' timespan='2021-2025' description={sylvanDescription} />
-				<ExperienceCard color='green' company='Infocision' title='Lead Application Developer' timespan='2020-2021' description={infocisionDescription} />
-				<ExperienceCard color='purple' company='Ally' title='Full-Stack Developer' timespan='2018-2019' description={allyDescription} />
-			</div>
-		</div>
+		</div >
 	);
 }

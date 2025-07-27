@@ -156,10 +156,10 @@ function App() {
 	};
 
 	return (
-		<div className="container" style={{ width: '100vw' }}>
-			<div style={{ width: '80vw', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
+		<div className="container">
+			<div id='container'>
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-				<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', margin: '0 auto' }}>
+				<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
 					<div className="header">
 						<p className="hello-text text-blue">Hello!</p>
 						<div className='header-text-container'>
@@ -182,7 +182,7 @@ function App() {
 						{randomShape}
 					</div>
 				</div>
-				<div className="experience-carousel" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: '100px' }}>
+				<div className="experience-carousel" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '100px' }}>
 					<button onClick={handlePrev} style={{ fontSize: 32, background: 'none', border: 'none', cursor: 'pointer', color: '#888', zIndex: 2 }} aria-label="Previous Experience">&#8592;</button>
 					<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0' }}>
 						{getCarouselIndices().map((idx) => {
@@ -206,7 +206,7 @@ function App() {
 										pointerEvents: isCenter ? 'auto' : 'none',
 									}}
 								>
-								<ExperienceCard
+									<ExperienceCard
 										color={experienceData[idx].color}
 										company={experienceData[idx].company}
 										title={experienceData[idx].title}
@@ -214,7 +214,7 @@ function App() {
 										description={null}
 										active={isCenter}
 										expanded={expandedIndex === idx}
-								/>
+									/>
 								</div>
 							);
 						})}

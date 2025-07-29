@@ -132,6 +132,9 @@ a:hover {
 	.carousel-side-item {
 		display: none !important;
 	}
+	.carousel-center-item {
+		width: 100% !important;
+	}
 	#container{
 		width: 100%;
 	}

@@ -191,7 +191,7 @@ function App() {
 							return (
 								<div
 									key={idx}
-									className={isSide ? 'carousel-side-item' : ''}
+									className={isSide ? 'carousel-side-item' : 'carousel-center-item'}
 									onClick={isCenter ? () => handleExpand(idx) : undefined}
 									style={{
 										width: '33.3%',

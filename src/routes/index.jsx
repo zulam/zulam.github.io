@@ -182,9 +182,9 @@ function App() {
 						{randomShape}
 					</div>
 				</div>
-				<div className="experience-carousel" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '100px' }}>
+				<div className="experience-carousel" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '100px', maxWidth: '80vw', width: '800px', overflow: 'hidden' }}>
 					<button onClick={handlePrev} style={{ fontSize: 32, background: 'none', border: 'none', cursor: 'pointer', color: '#888', zIndex: 2 }} aria-label="Previous Experience">&#8592;</button>
-					<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0' }}>
+					<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0', width: '100%' }}>
 						{getCarouselIndices().map((idx) => {
 							const isCenter = idx === carouselIndex;
 							const isSide = !isCenter;
@@ -194,11 +194,10 @@ function App() {
 									className={isSide ? 'carousel-side-item' : ''}
 									onClick={isCenter ? () => handleExpand(idx) : undefined}
 									style={{
-										width: isCenter ? '50%' : '30%',
+										width: '33.3%',
 										transition: 'all 0.2s',
 										cursor: isCenter ? 'pointer' : 'default',
-										padding: '0',
-										position: 'relative',
+										padding: '0px',
 										opacity: isCenter ? 1 : 0.7,
 										zIndex: isCenter ? 2 : 1,
 										transform: isCenter ? 'scale(1.08)' : 'scale(0.92)',

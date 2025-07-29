@@ -6,7 +6,8 @@ function ExperienceCard({ color, company, title, timespan, description, active, 
                 style={{ backgroundColor: 'rgb(255, 253, 248)' }}
             >
                 <p className={`experience-card-company ${expanded ? 'text-black' : `text-${color}`}`}>{company}</p>
-                <p className='experience-card-title text-black'>{title} | {timespan}</p>
+                <p className='experience-card-title text-black'>{title} </p>
+                <p className='experience-card-title text-black'>{timespan}</p>
                 <i className={`fa fa-arrow-down text-black ${(active && !expanded) ? 'bounce' : ''}`}></i>
                 {expanded && (
                     <div className='text-black'>

@@ -83,7 +83,6 @@ a:hover {
 }
 
 .experience-card-container {
-	flex: 1;
 	padding-inline: 10px;
 }
 
@@ -124,7 +123,6 @@ a:hover {
 }
 
 #container {
-	/* width: 80%; */
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
